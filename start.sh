@@ -1,12 +1,10 @@
-#!/bin/bash
-# Start Minecraft in background
-java -Xmx400m -Xms400m -jar server.jar nogui &
+#!/bin/sh
 
-# Install Playit if not present
-if [ ! -f playit ]; then
-  curl -L https://github.com/playit-cloud/playit-agent/releases/latest/download/playit-linux-amd64 -o playit
-  chmod +x playit
-fi
+# Accept the Minecraft EULA
+echo "eula=true" > eula.txt
 
-# Run Playit tunnel (this stays in foreground so dyno stays alive)
+# Start Minecraft server in the background
+java -Xmx1024M -Xms1024M -jar server.jar nogui &
+
+# Start Playit tunnel (foreground so dyno stays alive)
 ./playit
