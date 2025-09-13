@@ -1,0 +1,1 @@
+echo s3cmd > requirements.txt
