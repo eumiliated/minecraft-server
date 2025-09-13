@@ -1,1 +1,1 @@
-worker: java -Xmx400m -Xms400m -jar server.jar nogui
+worker: bash start.sh
