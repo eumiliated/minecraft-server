@@ -1,1 +1,0 @@
-echo eula=true > eula.txt
